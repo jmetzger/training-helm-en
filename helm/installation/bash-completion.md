@@ -1,4 +1,4 @@
-# Install bash-completion
+# Install bash-completion (helm)
 
 ```
 sudo su -
