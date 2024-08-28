@@ -41,24 +41,27 @@
      * [with](/helm/templates/flow-control/02-with.md)
      * [range](/helm/templates/flow-control/03-range.md)
       
-  1. Security of helm-Chart
-     * [Basics / Best Practices](helm/security/best-practices.md)
+  1. Security of helm-charts
      * [Security Encrypted Passwords in helm](/helm/security/secrets-password.md)
 
   1. Testing in Helm-Charts
      * [Testing in/of helm - charts](/helm/test/helm-test.md)
     
-  !. Helm Charts best practices 
+  1. Helm Charts best practices 
      * [Development](https://helm.sh/docs/howto/charts_tips_and_tricks/)
      * [Naming conventions a.s.o.](https://helm.sh/docs/chart_best_practices/)
     
   1. Tipps & Tricks
      * [Set namespace in config of kubectl](/kubectl/set-namespace-in-config.md)
      * [Create Ingress Redirect](/helm/create-charts/example-ingress.md)
-     * [Helm Charts - Development - Best practices](https://helm.sh/docs/howto/charts_tips_and_tricks/)
 
   1. Integration with other tools
      * [yamllint for syntaxcheck of yaml - files](helm/tools/yamllint.md)
 
   1. Troubleshooting und Debugging
      * [helm template --validate - testing against api-server](helm/test/helm-template-validate.md)
+
+## Backlog 
+
+  1. Security of helm-Chart
+     * [Basics / Best Practices](helm/security/best-practices.md)
