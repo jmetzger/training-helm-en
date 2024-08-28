@@ -16,7 +16,7 @@
      * [Download specific version of chart and unpack](/helm/commands/pull.md)
      * [Search in Repo und Artifacts Hub](/helm/commands/search.md)
      * [Show informations of charts online](/helm/commands/show.md)
-     * [Upgrades and occuring problems](/helm/commands/upgrade.md)
+     * [Upgrades and occuring problems](/helm/commands/upgrade-rollback.md)
 
  1. Helm Repository
      * [The most important helm commands](helm/commands/repo.md)
