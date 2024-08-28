@@ -131,7 +131,7 @@ cat templates/deployment.yaml
 ```
 
 ```
-Welche Version brauche ich ?
+# Which version do it need ? 
 https://kubernetes.io/docs/tutorials/stateless-application/guestbook/#creating-the-guestbook-frontend-deployment
 # Stand 2023-08-08
 gcr.io/google_samples/gb-frontend:v5
