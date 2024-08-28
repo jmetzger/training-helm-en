@@ -9,7 +9,7 @@ touch guestbook/templates/backup/persistentVolume-claim.yaml
 touch guestbook/templates/backup/job.yaml
 ```
 
-## Step 2: persistentvolumeclaim.yaml und job bevölkern 
+## Step 2: persistentvolumeclaim.yaml und setup job
 
 ```
 # nano guestbook/templates/backup/persistentVolume-claim.yaml
