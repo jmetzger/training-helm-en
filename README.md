@@ -5,11 +5,11 @@
   1. Helm Installation
      * [Installation of kubectl under Linux](kubectl/installation/linux.md)
      * [Installation of helm under Linux](helm/installation/linux.md)
-     * [Installation bash completion](helm/installation/bash-completion.md)
+     * [Installation bash completion (helm)](helm/installation/bash-completion.md)
 
   1. Basics 
      * [Feature / No-Features von Helm](/helm/grundlagen/features-no-features.md)
-     * [TopLevel Objekte](/helm/grundlagen/toplevel-objekte.md)
+     * [TopLevel objects](/helm/grundlagen/toplevel-objekte.md)
 
   1. Helm-Commands
      * [Setup repo](/helm/commands/repo.md)
