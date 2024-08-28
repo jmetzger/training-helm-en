@@ -57,4 +57,4 @@
      * [yamllint for syntaxcheck of yaml - files](helm/tools/yamllint.md)
 
   1. Troubleshooting und Debugging
-     * [helm template --validate - testing against api-server testen](helm/test/helm-template-validate.md)
+     * [helm template --validate - testing against api-server](helm/test/helm-template-validate.md)
