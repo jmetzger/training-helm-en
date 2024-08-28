@@ -31,7 +31,7 @@
      * [Creation of a Guestbooks](helm/create-charts/guestbook/01-guestbook.md)
      * [Create Hook for guestbook](/helm/create-charts/guestbook/02-guestbook-verbessern.md)
      * [Downloads dependencies herunterladen](helm/create-charts/download-dependencies.md)
-     * [Simple Testing](helm/test/simple-test.md)
+     * [Simple Testing](/helm/test/helm-test.md)
      * [Input validation within templates](helm/input-validation/example.md)
      * [Advanced Testing with chart-testing](helm/test/advanced-testing/advanced-testing-with-chart-testing.md)
      * [Publish chart to github](helm/create-charts/publish/publish-on-github.md)
