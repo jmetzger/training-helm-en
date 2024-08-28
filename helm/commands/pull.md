@@ -1,17 +1,17 @@
-# Chart runterladen und evtl entpacken (auch bestimmte version) 
+# Download Chart und eventually untar it (also a specific version) 
 
 ```
-# Vorher müssen wir den Repo-Eintrag anlegen 
+# First we need to set the repo - entry 
 helm repo add bitnami https://charts.bitnami.com/bitnami 
 
-# Lädt die letzte herunter
+# download the latest availabe chart 
 helm pull bitnami/mariadb
 
-# Lädt bestimmte chart-version runter 
+# Downloads a specific version 
 helm pull bitnami/mariadb --version 12.1.6
-# evtl. entpacken wenn gewünscht
+# untar it if wanted 
 # tar xvf mariadb-12.1.6.tgz
 
-# Schnelle Variante
+# Quick version 
 helm pull bitnami/mariadb --version 12.1.6 --untar
 ```
