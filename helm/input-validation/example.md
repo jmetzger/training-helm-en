@@ -1,4 +1,4 @@
-# Input Validierung 
+# Input validation
 
 ## Walkthrough 
 
@@ -12,7 +12,7 @@ rm -fR tests
 ```
 
 ```
-# nano service.yaml mit folgendem Inhalt
+# nano service.yaml with the following content
 apiVersion: v1
 kind: Service
 metadata:
