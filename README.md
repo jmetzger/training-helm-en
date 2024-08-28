@@ -29,12 +29,12 @@
 
   1. Erstellen von Helm-Charts
      * [Erstellen eines Guestbooks](helm/create-charts/guestbook/01-guestbook.md)
-     * [Hooks für Guestbook erstellen](/helm/create-charts/guestbook/02-guestbook-verbessern.md)
-     * [Dependencies/Abhängigkeiten herunterladen](helm/create-charts/download-dependencies.md)
-     * [Einfaches Testen](helm/test/simple-test.md)
-     * [Input Validierung innerhalb von templates](helm/input-validation/example.md)
-     * [Advanced Testing mit chart-testing](helm/test/advanced-testing/advanced-testing-with-chart-testing.md)
-     * [Chart auf github veröffentlichen](helm/create-charts/publish/publish-on-github.md)
+     * [Create Hook for guestbook](/helm/create-charts/guestbook/02-guestbook-verbessern.md)
+     * [Downloads dependencies herunterladen](helm/create-charts/download-dependencies.md)
+     * [Simple Testing](helm/test/simple-test.md)
+     * [Input validation within templates](helm/input-validation/example.md)
+     * [Advanced Testing with chart-testing](helm/test/advanced-testing/advanced-testing-with-chart-testing.md)
+     * [Publish chart to github](helm/create-charts/publish/publish-on-github.md)
 
   1. FlowControl Helm-Charts (if,with,range)
      * [if](/helm/templates/flow-control/01-if.md)
@@ -42,11 +42,11 @@
      * [range](/helm/templates/flow-control/03-range.md)
       
   1. Security of helm-Chart
-     * [Grundlagen / Best Practices](helm/security/best-practices.md)
+     * [Basics / Best Practices](helm/security/best-practices.md)
      * [Security Encrypted Passwords in helm](/helm/security/secrets-password.md)
 
   1. Testing in Helm-Charts
-     * [Testing in/von helm - charts](/helm/test/helm-test.md)
+     * [Testing in/of helm - charts](/helm/test/helm-test.md)
     
   1. Tipps & Tricks
      * [Set namespace in config of kubectl](/kubectl/set-namespace-in-config.md)
@@ -54,7 +54,7 @@
      * [Helm Charts - Development - Best practices](https://helm.sh/docs/howto/charts_tips_and_tricks/)
 
   1. Integration with other tools
-     * [yamllint für Syntaxcheck von yaml - Dateien](helm/tools/yamllint.md)
+     * [yamllint for syntaxcheck of yaml - files](helm/tools/yamllint.md)
 
   1. Troubleshooting und Debugging
-     * [helm template --validate - gegen api-server testen](helm/test/helm-template-validate.md)
+     * [helm template --validate - testing against api-server testen](helm/test/helm-template-validate.md)
