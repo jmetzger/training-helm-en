@@ -2,21 +2,21 @@
 
 ## Voraussetzung: 
 
-  * Dependencies sind in Chart.yml eingetragen 
-  * Achtung: Version ist die Version des Charts nicht der App !!! 
+  * Dependencies are in Chart.yml  
+  * Achtung: Version ist the version of the chart not the App !!! 
 
-## Das 1. Mal 
+## The first time 
 
 ```
-# 1. Alle Abhängigkeiten werden in Form von .tgz - Archiven heruntergeladen
-     -> in das charts - Verzeichnis
+# 1. All dependencies are downloaded as .tgz - archives 
+     -> into the chart folder 
 # 2. Eine Chart.lock - datei wird erstellt. (hält den aktuellen Stand fest)
 # helm dependancy update $CHART_PATH
-# botti erklärt sich gleich unten im Walkthrough 
+# Explained beneath in the Walkthrough 
 helm dependancy update botti 
 ```
 
-## Das 2. Mal (wenn Chart.lock vorhanden, aber charts/ muss nicht da sein 
+## The 2. time (if Chart.lock is there, but charts/ does not need to be there  
 
 ```
 helm dependancy build botti 
