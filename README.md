@@ -9,7 +9,7 @@
 
   1. Basics 
      * [Feature / No-Features von Helm](/helm/grundlagen/features-no-features.md)
-     * [TopLevel objects](/helm/grundlagen/toplevel-objekte.md)
+     * [TopLevel objects / Built-In variables](/helm/grundlagen/toplevel-objekte.md)
 
   1. Helm-Commands
      * [Setup repo](/helm/commands/repo.md)
