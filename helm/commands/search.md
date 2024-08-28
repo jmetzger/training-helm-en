@@ -1,19 +1,19 @@
-# Suche in den Repos und im Hub 
+# Search in Repos and in Hub 
 
-## Suche im hub 
+## Search in hub
 
 ```
 helm search hub mariadb
-# Zeige kompletten Zeilen an ohne abszuschneiden
+# Show complete lines without cutting it of 
 helm search hub mariadb --max-col-width=0
 ```
 
-## Suche im Repo 
+## Search in Repo 
 
 ```
-# Suche nach allen Charts, die mariadb im Namen oder der Beschreibung tragen 
+# Search for all charts, that have mariadb in name or description 
 helm search repo mariadb
 
-# Zeige alle Version von charts an, die mit bitnami/mariadb beginnen 
+# Show all versions of charts, that start with bitnami/mariadb 
 helm search repo bitnami/mariadb --versions
 ```
