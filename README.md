@@ -48,6 +48,10 @@
   1. Testing in Helm-Charts
      * [Testing in/of helm - charts](/helm/test/helm-test.md)
     
+  !. Helm Charts best practices 
+     * [Development](https://helm.sh/docs/howto/charts_tips_and_tricks/)
+     * [Naming conventions a.s.o.](https://helm.sh/docs/chart_best_practices/)
+    
   1. Tipps & Tricks
      * [Set namespace in config of kubectl](/kubectl/set-namespace-in-config.md)
      * [Create Ingress Redirect](/helm/create-charts/example-ingress.md)
