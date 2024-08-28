@@ -25,10 +25,10 @@
      * [Overview](helm/structure/overview.md)
 
   1. Basics of Helm-Charts
-     * [Dev und Spaces (2 topics)](/helm/templates/spaces.md)
+     * [Spaces in templates and how to test (2 topics)](/helm/templates/spaces.md)
 
-  1. Erstellen von Helm-Charts
-     * [Erstellen eines Guestbooks](helm/create-charts/guestbook/01-guestbook.md)
+  1. Creation of Helm-Charts
+     * [Creation of a Guestbooks](helm/create-charts/guestbook/01-guestbook.md)
      * [Create Hook for guestbook](/helm/create-charts/guestbook/02-guestbook-verbessern.md)
      * [Downloads dependencies herunterladen](helm/create-charts/download-dependencies.md)
      * [Simple Testing](helm/test/simple-test.md)
