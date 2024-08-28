@@ -1,14 +1,14 @@
-# Top-Level Objekt
+# Top-Level Variables (Built-in Variables) 
 
 ## .Chart 
 
- * Zieht alle Infomationen aus der Chart.yaml
- * Alle Eigenschaften fangen mit einem grossen Buchstaben, statt klein wie im Chart, z.B. .Chart.Name
+ * Shows all informaton of the Chart.yaml
+ * Alle properties start with a capital (although lower in Chart.yaml), e.g. .Chart.Name
 
 ## .Values 
 
- * Ansprechen der Values bzw. Default Values
+ * Reading of data from  Values-File or  Default Values
 
 ## .Release 
 
- * Ansprechen aller Eigenschaften aus der Release z.B. Release.Name 
+ * Get specific properties from the Relese itself, e.g. Release.Name 
