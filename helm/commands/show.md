@@ -6,7 +6,7 @@ helm show values bitnami/mariadb | grep -B 20 -i "image:"
 ```
 
 ```
-# Zeigt Chart-Definition, Readme usw. (=alles) an 
+# Show Chart-Definitions, Readme a.s.o. (=everything) - templates are missing / but saved in data in etcd  
 helm show all bitnami/mariadb 
 ```
 
