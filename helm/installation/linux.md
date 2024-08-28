@@ -1,4 +1,4 @@
-# Helm Installation unter Linux 
+# Helm Installation under Linux 
 
 ## Walkthrough  (Start as unprivileged user, e.g. training or kurs)
 
