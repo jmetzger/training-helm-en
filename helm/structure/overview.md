@@ -1,22 +1,21 @@
-# Überblick 
+# Overview 
 
-## Komponenten von Helm-Charts
+## Components of helm charts
 
 ### Chart.yml 
 
-### Chart.lock (wird automatisch generiert) 
-
-### templates/
+### Chart.lock (generated automatically) 
 
 #### _helper.tpl 
 
-  * Enthält snippet die mit include oder templates inkludiert werden können
-  * Konvention der Snippets mit define ChartName.Eigenschaft z.B. botti.fullname 
+  * Not considered, parsed a manifests 
+  * Hold snippets (named templates) can be included with "include" (Preferred) or "template"
+  * Best practice: name of named template with  define ChartName.Property z.B. botti.fullname 
 
 #### NOTES.txt 
 
-  * Wird ausgegeben, nachdem das Chart installiert wurde
-    * oder:
+  * is shown, after installation of chart with helm install 
+    * or: with helm get notes 
    
 ```
 # after installation
@@ -26,6 +25,6 @@ helm get -n my-application notes my-botti
 
 ### charts/
 
-  * Hier werden die abhängigen charts runtergeladen und als .tgz
+  * Hier dependencies are downloaded which are given in Charts.yml 
 
 
