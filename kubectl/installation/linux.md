@@ -1,4 +1,4 @@
-# Installation kubectl unter Linux 
+# Installation kubectl under Linux 
 
 ## Walkthrough (Start with unprivileged user like training or kurs)
 
