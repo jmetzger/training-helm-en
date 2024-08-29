@@ -20,6 +20,8 @@ helm -n jochen2 upgrade my-mariadb bitnami/mariadb --install --version 19.0.5 --
 cd
 mkdir manifests
 cd manifests/
+mkdir mariadb-release
+cd mariadb-release 
 echo "archtitecture: replication" > values.yaml
 
 ```
