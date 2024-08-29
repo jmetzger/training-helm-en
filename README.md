@@ -9,6 +9,9 @@
 
   1. Background
      * [Where to find helm charts](https://artifacthub.io)
+    
+  1. Install helm-chart
+     * [Install mariadb / bitnami](helm/mariadb/install.md)
 
   1. Basics 
      * [Feature / No-Features von Helm](/helm/grundlagen/features-no-features.md)
