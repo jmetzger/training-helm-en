@@ -12,6 +12,9 @@
     
   1. Install helm-chart
      * [Install mariadb / bitnami](helm/mariadb/install.md)
+    
+   1. Helm Repository
+     * [The most important helm commands](helm/commands/repo.md)
 
   1. Basics 
      * [Feature / No-Features von Helm](/helm/grundlagen/features-no-features.md)
@@ -23,9 +26,6 @@
      * [Search in Repo und Artifacts Hub](/helm/commands/search.md)
      * [Show informations of charts online](/helm/commands/show.md)
      * [Upgrades and occuring problems](/helm/commands/upgrade-rollback.md)
-
- 1. Helm Repository
-     * [The most important helm commands](helm/commands/repo.md)
 
   1. Structure of a Helm - Charts
      * [Overview](helm/structure/overview.md)
