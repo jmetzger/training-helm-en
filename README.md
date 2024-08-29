@@ -11,7 +11,7 @@
      * [Where to find helm charts](https://artifacthub.io)
     
   1. Install helm-chart
-     * [Install mariadb / bitnami](helm/mariadb/install.md)
+     * [Install/Upgrade mariadb / bitnami](helm/mariadb/install.md)
     
   1. Helm Repository
      * [The most important helm commands](helm/commands/repo.md)
