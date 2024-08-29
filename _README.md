@@ -1,72 +1,82 @@
-# Helm Paketmanagement
+# Helm Package Management
 
 
 ## Agenda
-  1. Helm Grundlagen
-     * [Installation von kubectl unter Linux](#installation-von-kubectl-unter-linux)
-     * [Installation von helm unter Linux](#installation-von-helm-unter-linux)
-     * [Installation bash completion](#installation-bash-completion)
+  1. Helm Installation
+     * [Installation of kubectl under Linux](#installation-of-kubectl-under-linux)
+     * [Installation of helm under Linux](#installation-of-helm-under-linux)
+     * [Installation bash completion (helm)](#installation-bash-completion-helm)
 
-  1. Grundlagen
+  1. Background
+     * [Where to find helm charts](https://artifacthub.io)
+    
+  1. Install helm-chart
+     * [Install/Upgrade mariadb / bitnami](#installupgrade-mariadb--bitnami)
+    
+  1. Helm Repository
+     * [The most important helm commands](#the-most-important-helm-commands)
+
+  1. Basics 
      * [Feature / No-Features von Helm](#feature--no-features-von-helm)
-     * [TopLevel Objekte](#toplevel-objekte)
+     * [TopLevel objects / Built-In variables](#toplevel-objects--built-in-variables)
 
-  1. Helm-Befehle und -Funktionen
-     * [Repo einrichten](#repo-einrichten)
-     * [Chart runterladen und evtl. entpacken und bestimmte Version](#chart-runterladen-und-evtl-entpacken-und-bestimmte-version)
-     * [Suche in Repo und Artifacts Hub](#suche-in-repo-und-artifacts-hub)
-     * [Anzeigen von Informationen aus dem Chart von Online](#anzeigen-von-informationen-aus-dem-chart-von-online)
-     * [Upgrade und auftretende Probleme](#upgrade-und-auftretende-probleme)
+  1. Helm Charts best practices 
+     * [Development](https://helm.sh/docs/howto/charts_tips_and_tricks/)
+     * [Naming conventions a.s.o.](https://helm.sh/docs/chart_best_practices/)
 
- 1. Helm Repository
-     * [Die wichtigsten Repo-Befehle](#die-wichtigsten-repo-befehle)
+  1. Helm-Commands
+     * [Setup repo](#setup-repo)
+     * [Download specific version of chart and unpack](#download-specific-version-of-chart-and-unpack)
+     * [Search in Repo und Artifacts Hub](#search-in-repo-und-artifacts-hub)
+     * [Show informations of charts online](#show-informations-of-charts-online)
+     * [Upgrades and occuring problems](#upgrades-and-occuring-problems)
 
-  1. Struktur von Helm - Charts
-     * [Überblick](#überblick)
+  1. Structure of a Helm - Charts
+     * [Overview](#overview)
 
-  1. Grundlagen Helm-Charts
-     * [Testumgebung und Spaces (2 Themen)](#testumgebung-und-spaces-2-themen)
+  1. Basics of Helm-Charts
+     * [Spaces in templates and how to test (2 topics)](#spaces-in-templates-and-how-to-test-2-topics)
 
-  1. Erstellen von Helm-Charts
-     * [Erstellen eines Guestbooks](#erstellen-eines-guestbooks)
-     * [Hooks für Guestbook erstellen](#hooks-für-guestbook-erstellen)
-     * [Dependencies/Abhängigkeiten herunterladen](#dependenciesabhängigkeiten-herunterladen)
-     * [Einfaches Testen](#einfaches-testen)
-     * [Input Validierung innerhalb von templates](#input-validierung-innerhalb-von-templates)
-     * [Advanced Testing mit chart-testing](#advanced-testing-mit-chart-testing)
-     * [Chart auf github veröffentlichen](#chart-auf-github-veröffentlichen)
+## Development 
+
+  1. Creation of Helm-Charts
+     * [Creation of a Guestbooks](#creation-of-a-guestbooks)
+     * [Create Hook for guestbook](#create-hook-for-guestbook)
+     * [Downloads dependencies herunterladen](#downloads-dependencies-herunterladen)
+     * [Simple Testing](#simple-testing)
+     * [Input validation within templates](#input-validation-within-templates)
+     * [Advanced Testing with chart-testing](#advanced-testing-with-chart-testing)
+     * [Publish chart to github](#publish-chart-to-github)
 
   1. FlowControl Helm-Charts (if,with,range)
      * [if](#if)
      * [with](#with)
      * [range](#range)
       
-  1. Sicherheit von helm-Chart
-     * [Grundlagen / Best Practices](#grundlagen--best-practices)
+  1. Security of helm-charts
      * [Security Encrypted Passwords in helm](#security-encrypted-passwords-in-helm)
 
   1. Testing in Helm-Charts
-     * [Testing in/von helm - charts](#testing-invon-helm---charts)
-
-  1. Durchführung von Upgrades und Rollbacks von Anwendungen
-
-  1. Helm in Continuous Integration / Continuous Deployment (CI/CD) Pipelines
-
+     * [Testing in/of helm - charts](#testing-inof-helm---charts)
+    
   1. Tipps & Tricks
      * [Set namespace in config of kubectl](#set-namespace-in-config-of-kubectl)
      * [Create Ingress Redirect](#create-ingress-redirect)
 
-  1. Integration mit anderen Tools
-     * [yamllint für Syntaxcheck von yaml - Dateien](#yamllint-für-syntaxcheck-von-yaml---dateien)
+  1. Integration with other tools
+     * [yamllint for syntaxcheck of yaml - files](#yamllint-for-syntaxcheck-of-yaml---files)
 
   1. Troubleshooting und Debugging
-     * [helm template --validate - gegen api-server testen](#helm-template---validate---gegen-api-server-testen)
+     * [helm template --validate - testing against api-server](#helm-template---validate---testing-against-api-server)
+
+  1. Security of helm-Chart
+     * [Basics / Best Practices](#basics--best-practices)
 
 <div class="page-break"></div>
 
-## Helm Grundlagen
+## Helm Installation
 
-### Installation von kubectl unter Linux
+### Installation of kubectl under Linux
 
 
 ### Walkthrough (Start with unprivileged user like training or kurs)
@@ -82,7 +92,7 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 ```
 
-### Installation von helm unter Linux
+### Installation of helm under Linux
 
 
 ### Walkthrough  (Start as unprivileged user, e.g. training or kurs)
@@ -105,7 +115,7 @@ exit
 
   * https://helm.sh/docs/intro/install/
 
-### Installation bash completion
+### Installation bash completion (helm)
 
 
 ```
@@ -116,33 +126,97 @@ exit
 su - tln11
 ```
 
-## Grundlagen
+## Background
 
-### Feature / No-Features von Helm
+### Where to find helm charts
+
+  * https://artifacthub.io
+
+## Install helm-chart
+
+### Install/Upgrade mariadb / bitnami
 
 
-  * Sortiert, die Manifeste bzw. Objekte bereits automatisch in der richtigen Reihenfolge für das Anwenden (apply) gegen den Server (Kube-Api-Server) 
+### Install 
 
-### TopLevel Objekte
+```
+cd 
+chmod g-r,o-r .kube/config
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm -n jochen2 install my-mariadb bitnami/mariadb --version 19.0.5 --create-namespace
+```
+
+```
+## OR: upgrade and if not install -> install 
+helm -n jochen2 upgrade my-mariadb bitnami/mariadb --install --version 19.0.5 --create-namespace
+```
+
+### Upgrade to primary / secondary 
+
+```
+cd
+mkdir manifests
+cd manifests/
+mkdir mariadb-release
+cd mariadb-release 
+echo "archtitecture: replication" > values.yaml
+
+```
+
+```
+architecture: replication
+auth:
+  rootPassword: zfGb7nFsMZ
+  replicationPassword: myreplication
+  forcePassword: true
+```
 
 
-### .Chart 
+```
 
- * Zieht alle Infomationen aus der Chart.yaml
- * Alle Eigenschaften fangen mit einem grossen Buchstaben, statt klein wie im Chart, z.B. .Chart.Name
+```
+helm -n jochen2 upgrade my-mariadb bitnami/mariadb --install --version 19.0.5 --create-namespace
+```
 
-### .Values 
 
- * Ansprechen der Values bzw. Default Values
+## Helm Repository
 
-### .Release 
+### The most important helm commands
 
- * Ansprechen aller Eigenschaften aus der Release z.B. Release.Name 
 
-## Helm-Befehle und -Funktionen
+### Installation 
 
-### Repo einrichten
+```
+helm repo add bitnami https://charts.bitnami.com/bitnami 
+helm -n jochen2 install my-mariadb bitnami/mariadb --version 19.0.5 --create-namespace
+helm -n jochen2 upgrade my-mariadb bitnami/mariadb --install --version 19.0.5 --create-namespace
+```
 
+### After installation 
+
+```
+## show all realeases 
+helm -n jochen list
+## all namespaces 
+helm list -A
+```
+
+```
+## get specific information from release
+## use value file (if there was one)
+helm -n jochen get values my-mariadb
+helm -n jochen get notes my-mariadb
+helm -n jochen get manifest my-mariadb
+```
+
+### Communicating with chart 
+
+```
+helm show values bitnami/mariadb 
+```
+
+
+## helm repo commands 
 
 ```
 helm repo list 
@@ -151,48 +225,144 @@ helm repo remove bitnami
 helm repo update
 ```
 
+### See all versions of a chart 
 
-### Chart runterladen und evtl. entpacken und bestimmte Version
+```
+helm search repo mariadb -l
+```
+
+## Basics 
+
+### Feature / No-Features von Helm
+
+ 
+  * Sorts the manifests / Objects automatically for the usage with apply against the kube-api-server 
+
+
+### Which order is it ?
+
+  * see also Internals [Helm Sorting Objects](/helm/internals.md)
+
+
+### TopLevel objects / Built-In variables
+
+
+### .Chart 
+
+ * Shows all informaton of the Chart.yaml
+ * Alle properties start with a capital (although lower in Chart.yaml), e.g. .Chart.Name
+
+### .Values 
+
+ * Reading of data from  Values-File or  Default Values
+
+### .Release 
+
+ * Get specific properties from the Relese itself, e.g. Release.Name 
+
+## Helm Charts best practices 
+
+### Development
+
+  * https://helm.sh/docs/howto/charts_tips_and_tricks/
+
+### Naming conventions a.s.o.
+
+  * https://helm.sh/docs/chart_best_practices/
+
+## Helm-Commands
+
+### Setup repo
+
+
+### Installation 
+
+```
+helm repo add bitnami https://charts.bitnami.com/bitnami 
+helm -n jochen2 install my-mariadb bitnami/mariadb --version 19.0.5 --create-namespace
+helm -n jochen2 upgrade my-mariadb bitnami/mariadb --install --version 19.0.5 --create-namespace
+```
+
+### After installation 
+
+```
+## show all realeases 
+helm -n jochen list
+## all namespaces 
+helm list -A
+```
+
+```
+## get specific information from release
+## use value file (if there was one)
+helm -n jochen get values my-mariadb
+helm -n jochen get notes my-mariadb
+helm -n jochen get manifest my-mariadb
+```
+
+### Communicating with chart 
+
+```
+helm show values bitnami/mariadb 
+```
+
+
+## helm repo commands 
+
+```
+helm repo list 
+helm repo add bitnami https://charts.bitnami.com/bitnami 
+helm repo remove bitnami 
+helm repo update
+```
+
+### See all versions of a chart 
+
+```
+helm search repo mariadb -l
+```
+
+### Download specific version of chart and unpack
 
 
 ```
-## Vorher müssen wir den Repo-Eintrag anlegen 
+## First we need to set the repo - entry 
 helm repo add bitnami https://charts.bitnami.com/bitnami 
 
-## Lädt die letzte herunter
+## download the latest availabe chart 
 helm pull bitnami/mariadb
 
-## Lädt bestimmte chart-version runter 
+## Downloads a specific version 
 helm pull bitnami/mariadb --version 12.1.6
-## evtl. entpacken wenn gewünscht
+## untar it if wanted 
 ## tar xvf mariadb-12.1.6.tgz
 
-## Schnelle Variante
+## Quick version 
 helm pull bitnami/mariadb --version 12.1.6 --untar
 ```
 
-### Suche in Repo und Artifacts Hub
+### Search in Repo und Artifacts Hub
 
 
-### Suche im hub 
+### Search in hub
 
 ```
 helm search hub mariadb
-## Zeige kompletten Zeilen an ohne abszuschneiden
+## Show complete lines without cutting it of 
 helm search hub mariadb --max-col-width=0
 ```
 
-### Suche im Repo 
+### Search in Repo 
 
 ```
-## Suche nach allen Charts, die mariadb im Namen oder der Beschreibung tragen 
+## Search for all charts, that have mariadb in name or description 
 helm search repo mariadb
 
-## Zeige alle Version von charts an, die mit bitnami/mariadb beginnen 
+## Show all versions of charts, that start with bitnami/mariadb 
 helm search repo bitnami/mariadb --versions
 ```
 
-### Anzeigen von Informationen aus dem Chart von Online
+### Show informations of charts online
 
 
 ```
@@ -201,7 +371,7 @@ helm show values bitnami/mariadb | grep -B 20 -i "image:"
 ```
 
 ```
-## Zeigt Chart-Definition, Readme usw. (=alles) an 
+## Show Chart-Definitions, Readme a.s.o. (=everything) - templates are missing / but saved in data in etcd  
 helm show all bitnami/mariadb 
 ```
 
@@ -212,41 +382,80 @@ helm show chart bitnami/mariadb
 ```
 
 
-### Upgrade und auftretende Probleme
+### Upgrades and occuring problems
 
-### Die wichtigsten Repo-Befehle
 
+### Walkthrough 
+
+#### Step 1: Upgrade 
 
 ```
-helm repo list 
-helm repo add bitnami https://charts.bitnami.com/bitnami 
-helm repo remove bitnami 
-helm repo update
+helm install my-mariadb bitnami/mariadb -f db/prod-values.yaml --set auth.database=db1
+helm get values my-mariadb
+## prod-values will be overwritten, because of using --set -> defaults to using switch --reset-values (in the background) 
+## for upgrade of mariadb, you will need passwort 
+export MARIADB_ROOT_PASSWORD=$(kubectl get secret --namespace "jochen" my-mariadb -o jsonpath="{.data.mariadb-root-password}" | base64 -d)
+helm upgrade my-mariadb bitnami/mariadb --set auth.database=db2 --set  auth.rootPassword=$MARIADB_ROOT_PASSWORD
+helm get values my-mariadb
+## if you want to reuse the values from last release -> set --reuse-values
+helm upgrade my-mariadb bitnami/mariadb --reuse-values --set  auth.rootPassword=$MARIADB_ROOT_PASSWORD
+helm get values my-mariadb
 ```
 
+#### Step 2: Rollback 
 
-## Struktur von Helm - Charts
+```
+helm history my-mariadb
+helm rollback my-mariadb 1
+```
 
-### Überblick
+### Problems with upgrade 
+
+  * in some circumstances --reset-values are set
+  * in come circumstances --reuse-values are set
+
+#### Default strategy:
+
+  * if you NOT set any values during upgrade, helm implicitly uses --reuse-values strategy
+  * if you ARE setting values during upgrade, helm implicitly uses --reset-values strategy
+
+### Strategy can get enforce 
+
+  * --reuse-strategy or --reuse-values  
+
+### Best choice (SOLUTION) , if you want to have values from the new chart version 
+
+```
+helm get values example-loki > prev-values.yaml
+## Values from old chart are merge with new chart, with merge of set on top 
+helm upgrade example-loki -f prev-values.yaml --set grafana.enabled=true
+```
+
+### Reference: 
+
+  * https://shipmight.com/blog/understanding-helm-upgrade-reset-reuse-values
+
+## Structure of a Helm - Charts
+
+### Overview
 
 
-### Komponenten von Helm-Charts
+### Components of helm charts
 
 #### Chart.yml 
 
-#### Chart.lock (wird automatisch generiert) 
-
-#### templates/
+#### Chart.lock (generated automatically) 
 
 ##### _helper.tpl 
 
-  * Enthält snippet die mit include oder templates inkludiert werden können
-  * Konvention der Snippets mit define ChartName.Eigenschaft z.B. botti.fullname 
+  * Not considered, parsed a manifests 
+  * Hold snippets (named templates) can be included with "include" (Preferred) or "template"
+  * Best practice: name of named template with  define ChartName.Property z.B. botti.fullname 
 
 ##### NOTES.txt 
 
-  * Wird ausgegeben, nachdem das Chart installiert wurde
-    * oder:
+  * is shown, after installation of chart with helm install 
+    * or: with helm get notes 
    
 ```
 ## after installation
@@ -256,13 +465,13 @@ helm get -n my-application notes my-botti
 
 #### charts/
 
-  * Hier werden die abhängigen charts runtergeladen und als .tgz
+  * Hier dependencies are downloaded which are given in Charts.yml 
 
 
 
-## Grundlagen Helm-Charts
+## Basics of Helm-Charts
 
-### Testumgebung und Spaces (2 Themen)
+### Spaces in templates and how to test (2 topics)
 
 
 ### Explanation 
@@ -297,9 +506,9 @@ helm template --debug ..
 
   * https://pkg.go.dev/text/template#hdr-Text_and_spaces
 
-## Erstellen von Helm-Charts
+## Creation of Helm-Charts
 
-### Erstellen eines Guestbooks
+### Creation of a Guestbooks
 
 
 ### Step 1: Create namespace and structure of helm chart 
@@ -433,7 +642,7 @@ cat templates/deployment.yaml
 ```
 
 ```
-Welche Version brauche ich ?
+## Which version do it need ? 
 https://kubernetes.io/docs/tutorials/stateless-application/guestbook/#creating-the-guestbook-frontend-deployment
 ## Stand 2023-08-08
 gcr.io/google_samples/gb-frontend:v5
@@ -473,7 +682,7 @@ kubectl -n jochen get all
 
   * https://kubernetes.io/docs/tutorials/stateless-application/guestbook/
 
-### Hooks für Guestbook erstellen
+### Create Hook for guestbook
 
 
 ### Step 1: 
@@ -485,7 +694,7 @@ touch guestbook/templates/backup/persistentVolume-claim.yaml
 touch guestbook/templates/backup/job.yaml
 ```
 
-### Step 2: persistentvolumeclaim.yaml und job bevölkern 
+### Step 2: persistentvolumeclaim.yaml und setup job
 
 ```
 ## nano guestbook/templates/backup/persistentVolume-claim.yaml
@@ -594,26 +803,26 @@ spec:
 
   * https://helm.sh/docs/topics/charts_hooks/
 
-### Dependencies/Abhängigkeiten herunterladen
+### Downloads dependencies herunterladen
 
 
 ### Voraussetzung: 
 
-  * Dependencies sind in Chart.yml eingetragen 
-  * Achtung: Version ist die Version des Charts nicht der App !!! 
+  * Dependencies are in Chart.yml  
+  * Achtung: Version ist the version of the chart not the App !!! 
 
-### Das 1. Mal 
+### The first time 
 
 ```
-## 1. Alle Abhängigkeiten werden in Form von .tgz - Archiven heruntergeladen
-     -> in das charts - Verzeichnis
+## 1. All dependencies are downloaded as .tgz - archives 
+     -> into the chart folder 
 ## 2. Eine Chart.lock - datei wird erstellt. (hält den aktuellen Stand fest)
 ## helm dependancy update $CHART_PATH
-## botti erklärt sich gleich unten im Walkthrough 
+## Explained beneath in the Walkthrough 
 helm dependancy update botti 
 ```
 
-### Das 2. Mal (wenn Chart.lock vorhanden, aber charts/ muss nicht da sein 
+### The 2. time (if Chart.lock is there, but charts/ does not need to be there  
 
 ```
 helm dependancy build botti 
@@ -665,9 +874,23 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm dependency build botti
 ```
 
-### Einfaches Testen
+### Simple Testing
 
-### Input Validierung innerhalb von templates
+
+### Walkthrough 
+
+```
+helm create demo
+helm install demo demo
+helm test demo 
+
+```
+
+### Reference 
+
+  * https://helm.sh/docs/topics/chart_tests/
+
+### Input validation within templates
 
 
 ### Walkthrough 
@@ -682,7 +905,7 @@ rm -fR tests
 ```
 
 ```
-## nano service.yaml mit folgendem Inhalt
+## nano service.yaml with the following content
 apiVersion: v1
 kind: Service
 metadata:
@@ -725,7 +948,7 @@ helm template --debug inputtest
 helm template inputtest --validate 
 ```
 
-### Advanced Testing mit chart-testing
+### Advanced Testing with chart-testing
 
 
 ### Reference 
@@ -733,7 +956,7 @@ helm template inputtest --validate
   * https://github.com/helm/chart-testing/
   * https://github.com/helm/chart-testing/blob/main/doc/ct_install.md
 
-### Chart auf github veröffentlichen
+### Publish chart to github
 
 
 ### Prep 
@@ -1004,13 +1227,7 @@ data:
   {{- end }}
 ```
 
-## Sicherheit von helm-Chart
-
-### Grundlagen / Best Practices
-
-
-
-* https://sysdig.com/blog/how-to-secure-helm/ 
+## Security of helm-charts
 
 ### Security Encrypted Passwords in helm
 
@@ -1029,7 +1246,7 @@ data:
 
 ## Testing in Helm-Charts
 
-### Testing in/von helm - charts
+### Testing in/of helm - charts
 
 
 ### Walkthrough 
@@ -1044,10 +1261,6 @@ helm test demo
 ### Reference 
 
   * https://helm.sh/docs/topics/chart_tests/
-
-## Durchführung von Upgrades und Rollbacks von Anwendungen
-
-## Helm in Continuous Integration / Continuous Deployment (CI/CD) Pipelines
 
 ## Tipps & Tricks
 
@@ -1176,9 +1389,9 @@ helm template --validate -f prod-values.yaml testprojekt
 helm install --dry-run -f prod-values.yaml testprojekt
 ```
 
-## Integration mit anderen Tools
+## Integration with other tools
 
-### yamllint für Syntaxcheck von yaml - Dateien
+### yamllint for syntaxcheck of yaml - files
 
 
 ```
@@ -1188,7 +1401,7 @@ apt install -y yamllint
 
 ## Troubleshooting und Debugging
 
-### helm template --validate - gegen api-server testen
+### helm template --validate - testing against api-server
 
 
 ### How ? 
@@ -1196,3 +1409,11 @@ apt install -y yamllint
 ```
 helm template guestbook --validate
 ```
+
+## Security of helm-Chart
+
+### Basics / Best Practices
+
+
+
+* https://sysdig.com/blog/how-to-secure-helm/ 
