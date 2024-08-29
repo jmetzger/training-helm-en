@@ -7,6 +7,9 @@
      * [Installation of helm under Linux](helm/installation/linux.md)
      * [Installation bash completion (helm)](helm/installation/bash-completion.md)
 
+  1. Background
+     * [Where to find helm charts](https://artifacthub.io)
+
   1. Basics 
      * [Feature / No-Features von Helm](/helm/grundlagen/features-no-features.md)
      * [TopLevel objects / Built-In variables](/helm/grundlagen/toplevel-objekte.md)
