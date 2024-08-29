@@ -13,7 +13,7 @@
   1. Install helm-chart
      * [Install mariadb / bitnami](helm/mariadb/install.md)
     
-   1. Helm Repository
+  1. Helm Repository
      * [The most important helm commands](helm/commands/repo.md)
 
   1. Basics 
