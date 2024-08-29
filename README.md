@@ -37,6 +37,8 @@
   1. Basics of Helm-Charts
      * [Spaces in templates and how to test (2 topics)](/helm/templates/spaces.md)
 
+## Development 
+
   1. Creation of Helm-Charts
      * [Creation of a Guestbooks](helm/create-charts/guestbook/01-guestbook.md)
      * [Create Hook for guestbook](/helm/create-charts/guestbook/02-guestbook-verbessern.md)
@@ -66,8 +68,6 @@
 
   1. Troubleshooting und Debugging
      * [helm template --validate - testing against api-server](helm/test/helm-template-validate.md)
-
-## Backlog 
 
   1. Security of helm-Chart
      * [Basics / Best Practices](helm/security/best-practices.md)
