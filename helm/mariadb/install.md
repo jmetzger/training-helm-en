@@ -25,3 +25,12 @@ cd mariadb-release
 echo "archtitecture: replication" > values.yaml
 
 ```
+
+```
+architecture: replication
+auth:
+  rootPassword: zfGb7nFsMZ
+  replicationPassword: myreplication
+  forcePassword: true
+```
+
