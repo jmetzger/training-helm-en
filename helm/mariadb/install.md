@@ -1,4 +1,6 @@
-# Install helm 
+# Mariadb 
+
+## Install 
 
 ```
 cd 
@@ -10,4 +12,14 @@ helm -n jochen2 install my-mariadb bitnami/mariadb --version 19.0.5 --create-nam
 ```
 # OR: upgrade and if not install -> install 
 helm -n jochen2 upgrade my-mariadb bitnami/mariadb --install --version 19.0.5 --create-namespace
+```
+
+## Upgrade to primary / secondary 
+
+```
+cd
+mkdir manifests
+cd manifests/
+echo "archtitecture: replication" > values.yaml
+
 ```
