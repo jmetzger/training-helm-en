@@ -34,3 +34,10 @@ auth:
   forcePassword: true
 ```
 
+
+```
+
+```
+helm -n jochen2 upgrade my-mariadb bitnami/mariadb --install --version 19.0.5 --create-namespace
+```
+
