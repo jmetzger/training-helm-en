@@ -20,6 +20,10 @@
      * [Feature / No-Features von Helm](/helm/grundlagen/features-no-features.md)
      * [TopLevel objects / Built-In variables](/helm/grundlagen/toplevel-objekte.md)
 
+  1. Helm Charts best practices 
+     * [Development](https://helm.sh/docs/howto/charts_tips_and_tricks/)
+     * [Naming conventions a.s.o.](https://helm.sh/docs/chart_best_practices/)
+
   1. Helm-Commands
      * [Setup repo](/helm/commands/repo.md)
      * [Download specific version of chart and unpack](/helm/commands/pull.md)
@@ -52,10 +56,6 @@
 
   1. Testing in Helm-Charts
      * [Testing in/of helm - charts](/helm/test/helm-test.md)
-    
-  1. Helm Charts best practices 
-     * [Development](https://helm.sh/docs/howto/charts_tips_and_tricks/)
-     * [Naming conventions a.s.o.](https://helm.sh/docs/chart_best_practices/)
     
   1. Tipps & Tricks
      * [Set namespace in config of kubectl](/kubectl/set-namespace-in-config.md)
