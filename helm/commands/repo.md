@@ -41,3 +41,8 @@ helm repo remove bitnami
 helm repo update
 ```
 
+## See all versions of a chart 
+
+```
+helm search repo mariadb -l
+```
